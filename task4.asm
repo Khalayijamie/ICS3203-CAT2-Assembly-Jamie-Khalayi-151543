@@ -1,13 +1,13 @@
 section .data
-    sensor_value dd 3          ; Example sensor value (can be modified)
-    motor_status db 0
-    alarm_status db 0
+    sensor_value dd 3          ; Example sensor value (4 bytes)
+    motor_status db 0          ; 1 byte
+    alarm_status db 0          ; 1 byte
 
 section .text
 global _start
 
 _start:
-    mov eax, [sensor_value]    ; Read sensor value
+    mov eax, [sensor_value]    ; Read sensor value (32-bit)
 
     cmp eax, 5
     jg high_level              ; if > 5, trigger alarm
@@ -16,18 +16,18 @@ _start:
     jle moderate_level         ; if <= 3, stop motor
 
 low_level:
-    mov [motor_status], 1      ; turn on motor
+    mov byte [motor_status], 1 ; turn on motor (byte size specified)
     jmp exit
 
 moderate_level:
-    mov [motor_status], 0      ; stop motor
+    mov byte [motor_status], 0 ; stop motor (byte size specified)
     jmp exit
 
 high_level:
-    mov [alarm_status], 1      ; trigger alarm
+    mov byte [alarm_status], 1 ; trigger alarm (byte size specified)
     jmp exit
 
 exit:
     mov eax, 1                 ; sys_exit
-    mov ebx, 0
+    xor ebx, ebx               ; exit status 0
     int 0x80
