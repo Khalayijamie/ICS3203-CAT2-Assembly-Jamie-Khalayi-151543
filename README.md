@@ -36,7 +36,7 @@ nasm -f elf32 task2.asm -o task2.o
 ld -m i386pe task2.o -o task2.exe
 ./task2.exe
 ```
-### Task 3: Modular Program with Subroutines for Factorial Calculation
+## Task 3: Modular Program with Subroutines for Factorial Calculation
 
 ### Purpose:
 This program computes the factorial of a given number using a subroutine. The subroutine handles the recursive computation of the factorial, and the program demonstrates the use of the stack to preserve register values.
