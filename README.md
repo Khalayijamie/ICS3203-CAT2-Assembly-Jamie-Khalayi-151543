@@ -13,10 +13,11 @@ This program prompts the user to enter a number and classifies it as "POSITIVE,"
 - Ensuring that the program handles both zero and non-zero values correctly.
 - Understanding how to handle user input in assembly, particularly the conversion of input to an integer for comparison.
 - Managing the flow of execution using conditional jumps (je, jg, jmp).
-
+  
 ### Compiling and Running:
 ```bash
 nasm -f elf32 task1.asm -o task1.o
 ld -m i386pe task1.o -o task1.exe
 ./task1.exe
-
+```bash
+hjhshjws
