@@ -19,5 +19,4 @@ This program prompts the user to enter a number and classifies it as "POSITIVE,"
 nasm -f elf32 task1.asm -o task1.o
 ld -m i386pe task1.o -o task1.exe
 ./task1.exe
-```bash
-hjhshjws
+
